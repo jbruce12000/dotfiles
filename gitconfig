@@ -1,19 +1,17 @@
+[user]
+    email = jbruce12000@gmail.com
+    name = jbruce
 [log]
-	decorate = full
-[color]
-
+    decorate = full
 [alias]
-  logger = "log --graph --abbrev-commit '--format=format:%h %C(yellow)%ci%Creset %Cgreen%an%Creset | %s'"
-  dif = "diff --color"
+    logger = "log --graph --abbrev-commit '--format=format:%h %C(yellow)%ci%Creset %Cgreen%an%Creset | %s'"
+    dif = "diff --color"
 [core]
-	editor = vim
- excludesfile = /opt/boxen/config/git/gitignore
+    editor = vim
+    excludesfile = /opt/boxen/config/git/gitignore
 
 [credential]
-helper = /opt/boxen/bin/boxen-git-credential
+    helper = /opt/boxen/bin/boxen-git-credential
 
 [hub]
-protocol = https
-[user]
-	email = reppardwalker@gmail.com
-	name = reppard
+    protocol = https
