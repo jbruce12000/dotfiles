@@ -13,7 +13,7 @@ ZSH_THEME="robbyrussell"
 alias totaltime='get_time'
 alias tasty="cd ~/quake/yquake2OSX/release/ && ./quake2 +set name killkid +connect tastyspleen.net:27916"
 alias spy_on='spy_on_func'
-alias irc='irssi --connect=irc.freenode.net --nick=reppard'
+alias irc='irssi --connect=irc.freenode.net --nick=jbruce'
 # Set to this to use case-sensitive completion
 # CASE_SENSITIVE="true"
 
