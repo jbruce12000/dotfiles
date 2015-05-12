@@ -2,13 +2,13 @@ syntax on
 
 filetype plugin indent on
 
-# case insensitive search
+" case insensitive search
 set ic
 
-# highlight search
+" highlight search
 set hlsearch
 
-# incremental search
+" incremental search
 
 set incsearch
 set backspace=indent,eol,start
