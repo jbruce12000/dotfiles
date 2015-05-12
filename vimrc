@@ -1,14 +1,15 @@
-set nocompatible
 syntax on
 
-filetype off
-execute pathogen#infect()
 filetype plugin indent on
 
-compiler ruby
+# case insensitive search
+set ic
 
+# highlight search
 set hlsearch
-set number
+
+# incremental search
+
 set incsearch
 set backspace=indent,eol,start
 set textwidth=0 nosmartindent tabstop=2 shiftwidth=2 softtabstop=2 expandtab
@@ -88,60 +89,8 @@ if version >= 700
     autocmd FileType tex setlocal spell spelllang=en_us
 endif
 
-" ------------------------------------------------------------------
-"  Color
-" ------------------------------------------------------------------
-set t_Co=256
-set background=dark
-let g:solarized_termcolors=256
-colorscheme solarized
 
-
-" Comment colors
-highlight Comment ctermfg=DarkMagenta
-highlight VirtSplit ctermbg=red guibg=red
-
-nmap <silent> <localleader>d :set background=dark<bar>let g:solarized_termcolors=256<bar> colorscheme solarized<CR>
-nmap <silent> <localleader>l :set background=light<bar>let g:solarized_termcolors=256<bar> colorscheme solarized<CR>
-
-set laststatus=2
-set statusline=
-set statusline+=%<\                       " cut at start
-set statusline+=%2*[%n%H%M%R%W]%*\        " buffer number, and flags
-set statusline+=%-40f\                    " relative path
-set statusline+=%=                        " seperate between right- and left-aligned
-set statusline+=%1*%y%*%*\                " file type
-set statusline+=%10(L(%l/%L)%)\           " line
-set statusline+=%2(C(%v/125)%)\           " column
-set statusline+=%P                        " percentage of file
-
-" http://techspeak.plainlystated.com/2009/08/vim-tohtml-customization.html
-function! DivHtml(line1, line2)
-  exec a:line1.','.a:line2.'TOhtml'
-  %g/<style/normal $dgg
-  %s/<\/style>\n<\/head>\n//
-  %s/body {/.vim_block {/
-  %s/<bods\(.*\)>\n/<div class="vim_block"\1>/
-  %s/<\/body>\n<\/html>/<\/div>
-  "%s/\n/<br \/>\r/g
-
-  set nonu
-endfunction
-
-command! -range=% DivHtml :call DivHtml(<line1>,<line2>)
 set undodir=~/.vim/undo
 set undofile
 set undolevels=1000 "maximum number of changes that can be undone
 set undoreload=10000 "maximum number lines to save for undo on a buffer reload
-
-" ctrlp settings
-nnoremap <silent> <LocalLeader>pp :CtrlP<CR>
-let g:ctrlp_map = ''
-let g:ctrlp_custom_ignore = {
-    \ 'dir':  '\.git$\|\.hg$\|\.svn$',
-    \ 'file': '\.pyc$\|\.pyo$\|\.rbc$|\.rbo$\|\.class$\|\.o$\|\~$\',
-    \ }
-let g:ctrlp_max_files = 0
-let g:ctrlp_switch_buffer = 1
-let g:ctrlp_max_height = 20
-let g:ctrlp_clear_cache_on_exit = 0
